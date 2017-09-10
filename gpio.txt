@@ -1,0 +1,61 @@
+step 1:转为超级用户
+pi@raspberrypi ~$ sudo su
+	root@raspberrypi:/home/pi#
+
+step 2:创建了gpio25号引脚目录
+root@raspberrypi:/home/pi# echo 25 > /sys/class/gpio/export
+
+step 3:进入gpio25号引脚的目录
+root@raspberrypi:/home/pi# cd /sys/class/gpio/gpio25
+
+step 4:指定25号引脚为输出
+root@raspberrypi:/sys/class/gpio/gpio25# echo out > direction
+
+step5:赋值
+root@raspberrypi:/sys/class/gpio/gpio25# echo 1 > value
+root@raspberrypi:/sys/class/gpio/gpio25# echo 0 > value
+
+============================shell=========================
+#!/bin/bash
+echo $1 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio$1/direction
+echo 1 > /sys/class/gpio/gpio$1/value
+
+命名name为on.sh
+root@raspberrypi:/home/pi# chmod +x on.sh
+Usage: ./on.sh 25
+
+=====================vnc server=============================
+pi端
+启动：vncserver
+关闭：vncserver -kill :port
+
+客户端
+登录：输入ip地址和端口号，连接
+退出：直接退出
+============================================================
+
+
+
+==========================rc.local===================================
+==== This script will run after boot and before input password====
+=====================================================================
+step 1: /home/pi/Pyset/writetotext.py
+step 2: vim /etc/rc.local
+step 3: add to tail:
+		/usr/bin/python  /home/pi/Pyset/writetotext.py
+step 4: save file(wq)
+step 5: sudo chmod +x rc.local
+======================================================================
+
+
+===================/etc/profile========================================
+====This script will run after input password==========================
+=======================================================================
+step 1: /home/pi/Pyset/writetotext.py
+step 2: vim /etc/profile
+step 3: add to tail:
+	sudo python /home/pi/Pyset/writetotext.py
+step 4: save file(wq)
+========================================================================
+

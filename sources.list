@@ -1,0 +1,10 @@
+#deb http://archive.raspberrypi.org/debian/ jessie main ui
+# Uncomment line below then 'apt-get update' to enable 'apt-get source'
+#deb-src http://archive.raspberrypi.org/debian/ jessie main ui
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi
+deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi
+
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main contrib non-free rpi
+
