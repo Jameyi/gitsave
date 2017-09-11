@@ -14,6 +14,9 @@ sudo cp /etc/apt/sources.list /etc/apt/sources.listbak
 sudo vim /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get upgrade
+
+# 配置.vimrc ~/.vimrc
+
 # 为文件去掉只读属性，方便编辑
 sudo chmod 777 file.txt
 # 安装图形界面
