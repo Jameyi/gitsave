@@ -1,0 +1,26 @@
+
+adduser -m tensorgo
+passwd tensorgo
+usermod --shell /bin/bash tensorgo
+
+passwd root
+
+sudo chmod u+w /etc/sudoers
+sudo vim /etc/sudoers
+	root  ALL=(ALL) NOPASSWD:ALL
+	tensorgo  ALL=(ALL) ALL
+
+sudo cp /etc/apt/sources.list /etc/apt/sources.listbak
+sudo vim /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo chmod 777 file.txt
+
+sudo apt-get update
+sudo apt-get x-window-system-core xfce4
+
+wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
+bash Anaconda2-4.4.0-Linux-x86_64.sh
+
+sudo apt-get install python-pycurl
