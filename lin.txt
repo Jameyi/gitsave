@@ -24,3 +24,9 @@ wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
 bash Anaconda2-4.4.0-Linux-x86_64.sh
 
 sudo apt-get install python-pycurl
+
+sudo apt-get install tightvncserver
+
+# command python setup.py egg_info failed with error
+pip install --upgrade setuptools
+sudo pip install setuptools==33.1.1
