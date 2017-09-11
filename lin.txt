@@ -23,6 +23,15 @@ sudo apt-get x-window-system-core xfce4
 wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
 bash Anaconda2-4.4.0-Linux-x86_64.sh
 
+# source一下，不然会提示"conda command not found"
+source ~/.bashrc
+
+# 在anaconda环境下安装TensorFlow,参考 www.15yan.com/story/8XZTIP2FbA/
+conda create --name tensorflow python=3.5
+source activate tensorflow
+conda install --name tensorflow tensorflow
+
+
 sudo apt-get install python-pycurl
 
 sudo apt-get install tightvncserver
