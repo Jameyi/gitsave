@@ -30,6 +30,7 @@ bash Anaconda2-4.4.0-Linux-x86_64.sh
 source ~/.bashrc
 
 # 在anaconda环境下安装TensorFlow,参考 www.15yan.com/story/8XZTIP2FbA/
+# root用户也要安装
 conda create --name tensorflow python=3.5
 source activate tensorflow
 conda install --name tensorflow tensorflow
