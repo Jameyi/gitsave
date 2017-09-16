@@ -1,0 +1,45 @@
+# 添加用户
+adduser -m tensorgo
+passwd tensorgo
+usermod --shell /bin/bash tensorgo
+# 根用户设置登录密码
+passwd root
+# 为新加的用户赋予权限
+sudo chmod u+w /etc/sudoers
+sudo vim /etc/sudoers
+	root  ALL=(ALL) NOPASSWD:ALL
+	tensorgo  ALL=(ALL) ALL
+# 备份配置源及更新配置源
+sudo cp /etc/apt/sources.list /etc/apt/sources.listbak
+sudo vim /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get upgrade
+
+# 配置.vimrc ~/.vimrc
+
+# 为文件去掉只读属性，方便编辑
+sudo chmod 777 file.txt
+# 安装图形界面
+sudo apt-get update
+sudo apt-get x-window-system-core xfce4
+# 安装anaconda
+wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
+bash Anaconda2-4.4.0-Linux-x86_64.sh
+
+# source一下，不然会提示"conda command not found" 参考 http://blog.csdn.net/marleylee/article/details/70808953
+source ~/.bashrc
+
+# 在anaconda环境下安装TensorFlow,参考 www.15yan.com/story/8XZTIP2FbA/
+# root用户也要安装
+conda create --name tensorflow python=3.5
+source activate tensorflow
+conda install --name tensorflow tensorflow
+
+# 安装pycurl
+sudo apt-get install python-pycurl
+# 安装vnc-server
+sudo apt-get install tightvncserver
+
+# 更新pip ，避免出现 command python setup.py egg_info failed with error
+pip install --upgrade setuptools
+sudo pip install setuptools==33.1.1

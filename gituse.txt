@@ -1,0 +1,28 @@
+#! git usage #
+
+########################## 本地库创建 ###############################
+#进入到要push到远程库的文件夹
+cd {path}/leosite-code/  
+sudo git config --global user.email youremailaddress
+sudo git config --global user.name yourgithubname
+# 在当前文件夹创建一个空的git本地库
+sudo git init
+# 将当前目录下的所有文件都添加到git本地库里
+sudo git add --all
+# 提交并加上提交信息
+sudo git commit -m 'first commit'
+
+# 在github上先建立对应名字的本地库名称
+# 连接远程库，回车输入用户名和密码
+sudo git remote add origin https://github.com/Jameyi/folder.git
+# push到远程库
+sudo git push -u origin master
+# 如果上一条push提示failed to...，用pull回拉从而同步版本
+sudo git pull -u origin master
+sudo git push -u origin master
+
+####################################################################
+cd {path}/folder/
+sudo git add --all
+sudo git commit -m 'any changed'
+sudo git push -u origin master
