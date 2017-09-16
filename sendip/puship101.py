@@ -42,12 +42,10 @@ def post_ip(appID,appSecret,pushEvent,pushMessage):
     c.close()
 
 if __name__ == "__main__":
-    #ip = get_local_ip()
-    #essid = get_essid()
+
     appID = "597320e2a4c48a1455de80b2"
     appSecret = "6f1b417cb01195fe337710012e81004c"
     pushEvent = "IP"
-    #pushMessage = essid + ":" + ip
     
     while True:
         ip = get_local_ip()
@@ -62,7 +60,5 @@ if __name__ == "__main__":
             except:
                 print("failed to send ip")
         time.sleep(1)
-        
-    #post_ip(appID,appSecret,pushEvent,pushMessage)
-    #print(essid + ":" + ip)
+
 
