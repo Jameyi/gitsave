@@ -43,3 +43,19 @@ sudo apt-get install tightvncserver
 # 更新pip ，避免出现 command python setup.py egg_info failed with error
 pip install --upgrade setuptools
 sudo pip install setuptools==33.1.1
+
+# 自动登录(适用于debian7.0)
+sudo vim /etc/inittab
+  1:2345:respawn:/sbin/getty 115200 tty1
+  # 将它注释掉，像这样：
+  #1:2345:respawn:/sbin/getty 115200 tty1
+  # 再在这行下面新增一行，内容如下：
+  1:2345:respawn:/bin/login -f pi tty1 /dev/tty1 2>&1
+  # 保存退出
+ 
+# bash:service command not found
+su - root #切换回root用户执行
+
+# using dependency based boot sequencing
+insserv -d ipacquire.sh
+
