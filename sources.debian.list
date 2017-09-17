@@ -1,0 +1,14 @@
+cp /etc/apt/sources.list{,.bak}
+vim /etc/apt/sources.list
+
+
+deb http://mirrors.163.com/debian jessie main non-free contrib
+deb http://mirrors.163.com/debian jessie-proposed-updates main contrib non-free
+deb-src http://mirrors.163.com/debian jessie main non-free contrib
+deb-src http://mirrors.163.com/debian jessie-proposed-updates main contrib non-free
+
+deb http://mirrors.163.com/debian-security jessie/updates main contrib non-free
+deb-src http://mirrors.163.com/debian-security jessie/updates main contrib non-free
+
+deb http://http.us.debian.org/debian jessie main contrib non-free
+deb http://security.debian.org jessie/updates main contrib non-free
