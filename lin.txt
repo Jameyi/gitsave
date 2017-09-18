@@ -22,6 +22,10 @@ sudo chmod 777 file.txt
 # 安装图形界面
 sudo apt-get update
 sudo apt-get x-window-system-core xfce4
+# ubuntu，要用sudo才可以登入xfce
+sudo apt-get update; sudo apt-get update --fix-missing; sudo apt-get upgrade
+sudo apt-get install xfce4 ; sudo startx
+
 # 安装anaconda
 wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
 bash Anaconda2-4.4.0-Linux-x86_64.sh
