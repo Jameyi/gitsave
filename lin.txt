@@ -41,6 +41,9 @@ conda install --name tensorflow tensorflow
 
 # 安装pycurl
 sudo apt-get install python-pycurl
+# conda 安装pycurl
+conda install tensorflow pycurl
+
 # 安装vnc-server
 sudo apt-get install tightvncserver
 
