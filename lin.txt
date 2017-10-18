@@ -9,6 +9,11 @@ sudo chmod u+w /etc/sudoers
 sudo vim /etc/sudoers
 	root  ALL=(ALL) NOPASSWD:ALL
 	tensorgo  ALL=(ALL) ALL
+
+# 设置普通用户拥有读写执行权限，该权限只在家目录内有效 http://blog.csdn.net/qwq_qaq/article/details/54882203
+su root
+sudo setfacl -m u:tensorgo:rwx /home/tensorgo/*
+
 # 备份配置源及更新配置源
 sudo cp /etc/apt/sources.list /etc/apt/sources.listbak
 sudo vim /etc/apt/sources.list
