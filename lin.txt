@@ -51,6 +51,19 @@ sudo apt-get install python-pycurl
 # conda 安装pycurl
 conda install tensorflow pycurl
 
+# 1.安装cmake
+sudo wget https://cmake.org/files/v3.10/cmake-3.10.2.tar.gz
+tar -xzvf cmake-3.10.2.tar.gz
+cd cmake-3.10.2
+./bootstrap
+make -j8
+sudo make install
+#2. 下载YouCompleteMe
+git clone --recursive git://github.com/Valloric/YouCompleteMe
+3.安装
+cd ~/YouCompleteMe
+sudo ./install.sh
+
 # 安装vnc-server
 sudo apt-get install tightvncserver
 
@@ -72,4 +85,5 @@ su - root #切换回root用户执行
 
 # using dependency based boot sequencing
 insserv -d ipacquire.sh
+
 
